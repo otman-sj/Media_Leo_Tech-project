@@ -1,0 +1,100 @@
+/* ===== Base ===== */
+*{ box-sizing:border-box }
+:root{
+  --bg:transparent;
+  --text:#111827;
+  --muted:#6b7280;
+  --accent:#f59a23;
+  --btn1:#2563eb;
+  --btn1-2:#1d4ed8;
+  --btn2:#111827;
+  --ring:rgba(0,0,0,.08);
+}
+body{ margin:0; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:#f9fafb }
+
+/* ===== Header ===== */
+.header{
+  position: sticky; top:0; left:0; right:0; z-index:1000; width:100%;
+  background: rgba(10,10,10,.9);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.wrap{
+  max-width:1200px; margin:0 auto; width:100%;
+  padding:12px 20px; display:flex; align-items:center; gap:16px;
+}
+
+/* Logo */
+.logo{ display:flex; align-items:center; gap:10px; margin-right:28px; text-decoration:none; color:#ffffff }
+.logo__img, .logo svg{ height:36px; max-height:40px; width:auto; display:block }
+@media (min-width:1280px){ .logo__img, .logo svg{ height:40px } }
+.logo-badge, .logo-wrapper{ background:transparent !important; border-radius:0 !important; box-shadow:none !important; padding:0 !important }
+
+/* Nav */
+.nav{ flex:1 1 auto; width:auto }
+.nav__list{ display:flex; justify-content:center; gap:32px; list-style:none; margin:0; padding:0 }
+.nav__link{
+  color:#e5e7eb; text-decoration:none; font-weight:600; padding:10px 0; position:relative
+}
+.nav__link:hover{ color:#ffffff }
+.nav__link--active{ color:var(--accent) }
+.nav__link--active::after{
+  content:""; position:absolute; left:0; right:0; bottom:-8px; height:2px; background:var(--accent); border-radius:2px
+}
+
+/* Buttons */
+.actions{ display:flex; align-items:center; justify-content:flex-end; gap:12px; margin-left:0; justify-self:end }
+.actions *{ max-width:100% }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:0 14px; border-radius:12px; font-weight:600; cursor:pointer; border:2px solid #ffffff;
+  height:40px; line-height:1;
+}
+.btn__icon{ width:18px; height:18px; display:block }
+.btn--primary{
+  color:#eaf7ff;
+  background: linear-gradient(180deg, var(--btn1), var(--btn1-2));
+  border-color: var(--ring);
+  box-shadow: 0 6px 16px rgba(37,99,235,.35);
+}
+.btn--primary:hover{ filter: brightness(1.07) }
+.btn--secondary{
+  background: #111827; color:#fff; border-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25)
+}
+.btn--secondary:hover{ filter: brightness(1.06) }
+
+/* Language */
+.lang{ position:relative }
+.lang__button{ padding-right:28px; position:relative }
+.lang__button::after{ content:""; position:absolute; right:10px; top:50%; width:8px; height:8px; border-right:2px solid #fff; border-bottom:2px solid #fff; transform: translateY(-50%) rotate(45deg) }
+.lang__menu{
+  position:absolute; right:0; top:110%; display:none; min-width:160px;
+  background:#ffffff; color:#111827; border:1px solid rgba(0,0,0,.08); border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,.12); padding:6px
+}
+.lang__menu[data-open="true"]{ display:block }
+.lang__item{
+  display:block; width:100%; text-align:left; padding:10px 12px; border-radius:8px; background:transparent; color:#111827; border:none; font-weight:600; cursor:pointer
+}
+.lang__item:hover{ background:#f3f4f6 }
+
+/* Mobile */
+.nav-toggle{
+  display:none; width:40px; height:40px; border:none; background:transparent; color:#ffffff
+}
+.nav-toggle__bar{ position:relative; display:block; width:24px; height:2px; background:#ffffff; margin:0 auto }
+.nav-toggle__bar::before,.nav-toggle__bar::after{
+  content:""; position:absolute; left:0; right:0; height:2px; background:#ffffff
+}
+.nav-toggle__bar::before{ top:-7px } .nav-toggle__bar::after{ bottom:-7px }
+
+@media (max-width: 960px){
+  .nav-toggle{ display:block }
+  .nav{ position:absolute; left:0; right:0; top:64px; display:none; width:100%; max-width:100%; background:rgba(10,10,10,.95); border-top:1px solid rgba(255,255,255,.12) }
+  .nav[data-open="true"]{ display:block }
+  .nav__list{ flex-direction:column; align-items:flex-start; gap:0; padding:10px 20px }
+  .nav__link{ width:100%; padding:14px 0 }
+  .actions{ margin-left:auto }
+}
+
+/* A11y helper */
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }

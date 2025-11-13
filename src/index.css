@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@source "../index.html";
+@source "./**/*.{js,ts,jsx,tsx}";
+
+html, body { margin:0; padding:0; width:100%; overflow-x:hidden; }
+*, *::before, *::after { box-sizing: border-box; }
+.page, .wrapper, .app-root { width:100%; margin:0; padding:0; overflow-x:hidden; }
+[style*="100vw"], [class*="vw"]{ width:100% !important; }
+img, video { max-width: 100%; height: auto; display: block; }
+.logo img, .logo svg { image-rendering: auto; -ms-interpolation-mode: bicubic; }
+.actions{ display:flex; align-items:center; gap:12px; }
+.actions *{ max-width:100%; }
