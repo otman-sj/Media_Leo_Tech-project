@@ -1,0 +1,24 @@
+.services{ background:#fff; padding:40px 16px }
+.services__wrap{ max-width:1200px; margin:0 auto }
+.services__grid{ display:grid; grid-template-columns: repeat(3, minmax(280px,1fr)); gap:26px }
+.service{ position:relative }
+.service__image{ height:240px; border-radius:18px; background: radial-gradient(120% 80% at 50% 0%, #eceff3 0%, #dfe3e8 50%, #c9ced6 100%); box-shadow:0 10px 24px rgba(0,0,0,.12) }
+.service__image--website{ background: center/cover no-repeat url('/src/assets/image 1.webp') }
+.service__image--social{ background: center/cover no-repeat url('/src/assets/image 2.webp') }
+.service__image--content{ background: center/cover no-repeat url('/src/assets/image 3.webp') }
+.service__image--ads{ background: center/cover no-repeat url('/src/assets/image 4.webp') }
+.service__image--seo{ background: center/cover no-repeat url('/src/assets/image 5.webp') }
+.service__image--branding{ background: center/cover no-repeat url('/src/assets/image 6.webp') }
+.service__card{ position:relative; margin:-32px 14px 0; background:#ffffff; border:1px solid rgba(0,0,0,.08); border-radius:16px; box-shadow:0 10px 26px rgba(0,0,0,.08); padding:18px 18px 20px }
+.service__badge{ position:absolute; left:14px; top:-18px; width:36px; height:36px; border-radius:50%; background:#0e3a55; box-shadow:0 8px 20px rgba(0,0,0,.12); display:grid; place-items:center }
+.service__badge img{ width:20px; height:20px; display:block; filter: brightness(1.05) }
+.service__badge .icon--camera, .service__badge .icon--paint{ width:16px; height:16px }
+.service__title{ margin:0 0 10px; font-family:'Montserrat', system-ui, Segoe UI, Roboto, Arial, sans-serif; font-weight:800; font-size: clamp(18px, 2.2vw, 22px); color:#374151; letter-spacing:.2px }
+.service__list{ margin:0; padding:0; list-style:none; color:#6b7280; font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, sans-serif; font-weight:500; line-height:1.55; font-size: clamp(13px, 1.6vw, 15px) }
+.service__list li{ margin:4px 0 }
+.service__cta{ position:absolute; right:12px; bottom:12px; width:44px; height:44px; border-radius:50%; background:#ffffff; border:none; cursor:pointer; display:grid; place-items:center }
+.service__cta img{ width:20px; height:20px; display:block }
+.services__footer{ display:flex; justify-content:center; margin-top:24px }
+.services__all{ display:inline-block; padding:10px 18px; border-radius:10px; background:#f59a23; color:#fff; text-decoration:none; font-weight:700; box-shadow:0 8px 22px rgba(245,154,35,.35) }
+@media (max-width: 960px){ .services__grid{ grid-template-columns: repeat(2, minmax(260px,1fr)) } }
+@media (max-width: 640px){ .services__grid{ grid-template-columns: 1fr } }

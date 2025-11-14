@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 import './Header.css'
 import logoSvg from '../../assets/Logo.svg'
 import phoneIcon from '../../assets/phone-svgrepo-com.svg'
-import Hero from '../Main/Hero'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const [language, setLanguage] = useState('AR')
+  const [language, setLanguage] = useState({ label: 'Select a langauge', flag: '' })
+  const [showDefaultOption, setShowDefaultOption] = useState(true)
   return (
     <>
     <header className="header">
@@ -47,24 +47,29 @@ export default function Header() {
               aria-expanded={langOpen}
               onClick={() => setLangOpen(!langOpen)}
             >
-              {language}
+              {language.flag ? <span className={`flag ${language.flag}`} aria-hidden="true"></span> : null}
+              {language.label}
             </button>
             <ul className="lang__menu" data-open={langOpen ? 'true' : 'false'} role="menu">
+              {showDefaultOption && (
+                <li>
+                  <button role="menuitem" className="lang__item" onClick={() => { setShowDefaultOption(false); setLangOpen(false) }}>Select a langauge</button>
+                </li>
+              )}
               <li>
-                <button role="menuitem" className="lang__item" onClick={() => { setLanguage('AR'); setLangOpen(false) }}>العربية</button>
+                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'العربية', flag: 'fi fi-ma' }); setShowDefaultOption(false); setLangOpen(false) }}><span className="fi fi-ma flag" aria-hidden="true"></span>العربية</button>
               </li>
               <li>
-                <button role="menuitem" className="lang__item" onClick={() => { setLanguage('EN'); setLangOpen(false) }}>English</button>
+                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'English', flag: 'fi fi-gb' }); setShowDefaultOption(false); setLangOpen(false) }}><span className="fi fi-gb flag" aria-hidden="true"></span>English</button>
               </li>
               <li>
-                <button role="menuitem" className="lang__item" onClick={() => { setLanguage('FR'); setLangOpen(false) }}>Français</button>
+                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'Français', flag: 'fi fi-fr' }); setShowDefaultOption(false); setLangOpen(false) }}><span className="fi fi-fr flag" aria-hidden="true"></span>Français</button>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </header>
-    <Hero/>
     </>
   )
 }

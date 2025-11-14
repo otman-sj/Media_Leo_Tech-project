@@ -1,6 +1,7 @@
 import React from 'react'
 import './Hero.css'
-import mainImg from '../../assets/mainImg.jpg'
+ 
+import Hero_Img from '../../assets/Hero_Img.jpg'
 import icon1 from '../../assets/1.svg'
 import icon2 from '../../assets/2.svg'
 import icon22 from '../../assets/22.svg'
@@ -8,6 +9,7 @@ import icon99 from '../../assets/99.svg'
 import vector from '../../assets/Vector.svg'
 import vector1 from '../../assets/Vector-1.svg'
 import logoSvg from '../../assets/Logo.svg'
+import dashboardImg from '../../assets/Main_dashboard.jpg'
 
 export default function Hero() {
   return (
@@ -20,7 +22,10 @@ export default function Hero() {
           <a href="#" className="cta-btn cta-btn--secondary">Watch our Story <span className="play-icon" aria-hidden="true"></span></a>
         </div>
         <div className='hero-media'>
-          <img src={mainImg} alt="" />
+          {/* <img src={Hero_Img} alt="" /> */}
+        </div>
+        <div className='dashboard'>
+          <img src={dashboardImg} alt="Dashboard preview" />
         </div>
       </div>
       <div className='brands'>
