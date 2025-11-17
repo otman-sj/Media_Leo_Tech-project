@@ -1,0 +1,29 @@
+.blog-intro{ width:100%; background:#ffffff; padding:24px 20px }
+.blog-intro__container{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns: minmax(280px, 520px) 1fr; gap:32px; align-items:center }
+
+.blog-intro__media{ position:relative }
+/* Heart-pin masked photo component */
+.pin-figure{ width: clamp(270px, 50vw, 540px); margin: 0; transform: translate(-72px, 12px) }
+.pin{ display:block; width:100%; height:auto }
+.pin-img{ image-rendering: -webkit-optimize-contrast; transform: translate(-5%, 3%) scale(1.03); transform-origin: 50% 50% }
+@media (max-width: 768px){
+  .pin-img{ transform: translate(-4%, 2%) scale(1.01) }
+}
+
+.blog-intro__content{ color:#111827 }
+.blog-intro__eyebrow{ margin:0 0 6px; font-weight:700; color:#6b7280 }
+.blog-intro__title{ margin:0 0 12px;  font-size:clamp(24px, 3.6vw, 36px); color:#111827 }
+.blog-intro__text{ margin:0 0 18px; font-size:clamp(14px, 1.5vw, 18px); color:#6b7280; line-height:1.7; max-width:680px }
+
+.blog-intro__stats{ display:flex; gap:18px 36px; align-items:baseline }
+.blog-intro__stat{ min-width:150px; display:flex; flex-direction:column }
+.blog-intro__stat-value{ font-weight:900; font-size:clamp(18px, 2.6vw, 28px); color:#F59A23; line-height:1.1; margin-bottom:8px }
+.blog-intro__stat-label{ font-size:clamp(12px, 1.4vw, 14px); color:#6b7280 }
+
+@media (max-width: 960px){
+  .blog-intro__container{ grid-template-columns: 1fr; gap:24px }
+  .blog-intro__text{ max-width:100% }
+}
+@media (max-width: 768px){
+  .pin-figure{ width: 86vw; transform: translate(-44px, 10px) }
+}

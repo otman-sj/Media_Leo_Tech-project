@@ -1,29 +1,35 @@
 import React, { useState } from 'react'
 
 import './Header.css'
-import logoSvg from '../../assets/Logo.svg'
 import phoneIcon from '../../assets/phone-svgrepo-com.svg'
+import logoSvg from '../../assets/Logo2.svg'
 
-export default function Header() {
+export default function Header({ route = '/', onNavigate }) {
   const [open, setOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [language, setLanguage] = useState({ label: 'Select a langauge', flag: '' })
   const [showDefaultOption, setShowDefaultOption] = useState(true)
   return (
     <>
-    <header className="header">
+    <header className={`header ${['/blog','/services','/industries','/about','/contact'].includes(route) ? 'header--light' : ''}`}>
       <div className="wrap">
-        <a className="logo" href="/">
+        <a className="logo" href="/" onClick={(e) => onNavigate && onNavigate('/', e)}>
           <img src={logoSvg} alt="Media Leo Tech" className="logo__img" />
         </a>
         <nav id="main-nav" className="nav" aria-label="Primary" data-open={open ? 'true' : 'false'}>
           <ul className="nav__list">
-            <li><a className="nav__link nav__link--active" href="#">Home</a></li>
-            <li><a className="nav__link" href="#">Blog</a></li>
-            <li><a className="nav__link" href="#">Services</a></li>
-            <li><a className="nav__link" href="#">Industries</a></li>
-            <li><a className="nav__link" href="#">About us</a></li>
-            <li><a className="nav__link" href="#">Contact</a></li>
+            <li className="nav__item nav__item--phone">
+              <a className="nav__link nav__link--phone" href="tel:+212528222211">
+                <img src={phoneIcon} alt="Phone" className="btn__icon" />
+                Call Us
+              </a>
+            </li>
+            <li><a className={`nav__link ${route==='/'?'nav__link--active':''}`} href="/" onClick={(e)=>onNavigate && onNavigate('/', e)}>Home</a></li>
+            <li><a className={`nav__link ${route==='/blog'?'nav__link--active':''}`} href="/blog" onClick={(e)=>onNavigate && onNavigate('/blog', e)}>Blog</a></li>
+            <li><a className={`nav__link ${route==='/services'?'nav__link--active':''}`} href="/services" onClick={(e)=>onNavigate && onNavigate('/services', e)}>Services</a></li>
+            <li><a className={`nav__link ${route==='/industries'?'nav__link--active':''}`} href="/industries" onClick={(e)=>onNavigate && onNavigate('/industries', e)}>Industries</a></li>
+            <li><a className={`nav__link ${route==='/about'?'nav__link--active':''}`} href="/about" onClick={(e)=>onNavigate && onNavigate('/about', e)}>About us</a></li>
+            <li><a className={`nav__link ${route==='/contact'?'nav__link--active':''}`} href="/contact" onClick={(e)=>onNavigate && onNavigate('/contact', e)}>Contact</a></li>
           </ul>
         </nav>
         <div className="actions">
@@ -38,7 +44,7 @@ export default function Header() {
           </button>
           <a className="btn btn--primary" href="tel:+212528222211">
             <img src={phoneIcon} alt="Phone" className="btn__icon" />
-            +212 5 28 22 22 11
+            +212 6 61 16 09 09
           </a>
           <div className="lang">
             <button

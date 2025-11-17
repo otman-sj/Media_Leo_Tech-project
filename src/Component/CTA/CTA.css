@@ -1,0 +1,18 @@
+.cta-banner{
+  background-image: url('/src/assets/Group 236.png'), url('/src/assets/Group 236.png'), url('/src/assets/Rectangle 82.png');
+  background-position: left bottom, right bottom, center;
+  background-size: 45% auto, 45% auto, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  padding:36px 20px; margin-top:48px
+}
+.cta-banner__wrap{ max-width:1120px; margin:0 auto; text-align:center }
+.cta-banner__heading{ margin:0 0 10px; font-weight:800; font-size:clamp(28px, 3.2vw, 48px); line-height:1.12; color:#111827 }
+.cta-banner__heading .accent{ color:#F59A23 }
+.cta-banner__subtitle{ margin:0 auto 22px; max-width:900px; font-size:clamp(15px, 1.4vw, 20px); line-height:1.5; color:#fff }
+.cta-banner__actions{ display:flex; justify-content:center }
+.cta-banner__button{ display:inline-flex; align-items:center; gap:10px; background:#F59A23; color:#fff; text-decoration:none; border-radius:999px; padding:12px 20px; font-weight:600 }
+@media (max-width:820px){
+  .cta-banner{ padding:28px 16px; margin-top:32px; background-size: 54% auto, 54% auto, cover }
+  .cta-banner__heading{ font-size:clamp(24px, 5vw, 36px) }
+  .cta-banner__subtitle{ max-width:640px }
+}

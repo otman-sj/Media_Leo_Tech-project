@@ -14,19 +14,22 @@ body{ margin:0; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; col
 
 /* ===== Header ===== */
 .header{
-  position: sticky; top:0; left:0; right:0; z-index:1000; width:100%;
-  background: rgba(10,10,10,.9);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  position: absolute; top:-20px; left:0; right:0; z-index:1000; width:100%;
+  background: transparent;
+  border-bottom: none;
 }
+.header--light{ background:#ffffff; border-bottom:1px solid rgba(0,0,0,.08) }
 .wrap{
   max-width:none; margin:0; width:100%;
-  padding:12px 20px; display:flex; align-items:center; gap:16px;
+  padding:0 20px; display:flex; align-items:center; gap:16px;
+  background: transparent; flex-wrap:wrap; row-gap:8px;
 }
 
 /* Logo */
-.logo{ display:flex; align-items:center; gap:10px; margin-right:28px; margin-left:12px; text-decoration:none; color:#ffffff }
-.logo__img, .logo svg{ height:36px; max-height:40px; width:auto; display:block }
-@media (min-width:1280px){ .logo__img, .logo svg{ height:40px } }
+.logo{ display:flex; align-items:center; gap:10px; margin-right:28px; margin-left:75px; text-decoration:none; color:#ffffff }
+.header--light .logo{ color:#111827 }
+.logo__img, .logo svg{ height:120px; max-height:120px; width:auto; display:block }
+@media (min-width:1280px){ .logo__img, .logo svg{ height:120px } }
 .logo-badge, .logo-wrapper{ background:transparent !important; border-radius:0 !important; box-shadow:none !important; padding:0 !important }
 
 /* Nav */
@@ -35,6 +38,8 @@ body{ margin:0; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; col
 .nav__link{
   color:#e5e7eb; text-decoration:none; font-weight:600; padding:10px 0; position:relative
 }
+.header--light .nav__link{ color:#111827 }
+.header--light .nav__link:hover{ color:#111827 }
 .nav__link:hover{ color:#ffffff }
 .nav__link--active{ color:var(--accent) }
 .nav__link--active::after{
@@ -46,8 +51,8 @@ body{ margin:0; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; col
 .actions *{ max-width:100% }
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  padding:0 14px; border-radius:12px; font-weight:600; cursor:pointer; border:2px solid #ffffff;
-  height:40px; line-height:1;
+  padding:0 clamp(10px, 1.6vw, 14px); border-radius:12px; font-weight:600; cursor:pointer; border:2px solid #ffffff;
+  height:clamp(36px, 4.2vw, 40px); line-height:1; font-size:clamp(12px, 1.4vw, 14px);
 }
 .btn__icon{ width:18px; height:18px; display:block }
 .btn--primary{
@@ -83,21 +88,58 @@ body{ margin:0; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; col
 
 /* Mobile */
 .nav-toggle{
-  display:none; width:40px; height:40px; border:none; background:transparent; color:#ffffff
+  display:none; width:40px; height:40px; border:none; background:transparent; color:#000000
 }
 .nav-toggle__bar{ position:relative; display:block; width:24px; height:2px; background:#ffffff; margin:0 auto }
+.header--light .nav-toggle__bar{ background:#111827 }
 .nav-toggle__bar::before,.nav-toggle__bar::after{
   content:""; position:absolute; left:0; right:0; height:2px; background:#ffffff
 }
+.header--light .nav-toggle__bar::before,.header--light .nav-toggle__bar::after{ background:#111827 }
 .nav-toggle__bar::before{ top:-7px } .nav-toggle__bar::after{ bottom:-7px }
 
 @media (max-width: 960px){
   .nav-toggle{ display:block }
   .nav{ position:absolute; left:0; right:0; top:64px; display:none; width:100%; max-width:100%; background:rgba(10,10,10,.95); border-top:1px solid rgba(255,255,255,.12) }
+  .header--light .nav{ background:#ffffff; border-top:1px solid rgba(0,0,0,.12) }
+  .header--light .nav__link{ color:#111827 }
   .nav[data-open="true"]{ display:block }
   .nav__list{ flex-direction:column; align-items:flex-start; gap:0; padding:10px 20px }
   .nav__link{ width:100%; padding:14px 0 }
-  .actions{ margin-left:auto }
+  .actions{ margin-left:auto; gap:10px }
+  .wrap{ padding:0 16px; gap:10px; row-gap:8px }
+  .btn{ height:36px; padding:0 10px; font-size:12px }
+  .logo__img, .logo svg{ height:72px; max-height:72px }
+}
+
+@media (max-width: 640px){
+  .btn__icon{ width:16px; height:16px }
+}
+
+@media (max-width: 480px){
+  .wrap{ flex-direction:column; align-items:center }
+  .logo{ margin-left:0 }
+  .actions{ flex-wrap:wrap; gap:8px; width:100%; justify-content:space-between; align-items:center }
+  .btn{ height:34px; padding:0 8px; font-size:12px }
+  .btn__icon{ width:18px; height:18px }
+  .nav-toggle{ order:1 }
+  .btn--primary{ order:2; display:none }
+  .lang{ order:3 }
+  .nav{ width:100% }
+}
+
+@media (max-width: 420px){
+  .btn--primary{ font-size:0; padding:0 10px; min-width:44px }
+  .btn--primary .btn__icon{ width:20px; height:20px }
+  .lang__button{ height:34px; padding:0 12px; font-size:12px }
+}
+
+/* Phone link inside nav (mobile only) */
+.nav__item--phone{ display:none }
+@media (max-width: 480px){
+  .nav__item--phone{ display:block; width:100%; }
+  .nav__link--phone{ display:inline-flex; align-items:center; gap:8px; width:100%; padding:10px 12px; background:#005A8C; color:#ffffff; border:2px solid #ffffff; border-radius:12px; font-weight:700 }
+  .nav__link--phone:hover{ filter:brightness(1.07) }
 }
 
 /* A11y helper */

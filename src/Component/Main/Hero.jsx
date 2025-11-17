@@ -11,11 +11,12 @@ import vector1 from '../../assets/Vector-1.svg'
 import logoSvg from '../../assets/Logo.svg'
 import dashboardImg from '../../assets/Main_dashboard.jpg'
 
+
 export default function Hero() {
   return (
     <div>
       <div className='main'>
-        <h1>Welcome To <span>M</span>edia<br></br> Leo Tech</h1>
+        <h1>Welcome To <br/><span>M</span>edia Leo Tech</h1>
         <p>Your strategic partner who blueprints your vision into unstoppable digital execution.</p>
         <div className='hero-cta'>
           <a href="#" className="cta-btn cta-btn--primary">Start Now</a>

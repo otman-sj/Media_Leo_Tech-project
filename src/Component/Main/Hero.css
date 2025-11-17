@@ -1,5 +1,6 @@
 .main{ position:relative; color:#fff; text-align:center; overflow:hidden;
-  margin:0; padding: clamp(16px, 2vh, 24px) 16px 120px; width:100%; background: radial-gradient(120% 80% at 50% 0%, #0b0c0f 0%, #0a0a0d 40%, #070708 100%)
+  margin:0; padding: 100px 16px 120px; width:100%;
+  background: url('/src/assets/hero.jpg') center/cover no-repeat
 }
 .main::before{ content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
   background: repeating-linear-gradient(to right, rgba(255,255,255,.06) 0 1px, transparent 1px 80px);

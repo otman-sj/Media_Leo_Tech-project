@@ -1,0 +1,99 @@
+/* Header container */
+.testimonials-header{
+  max-width: 980px;
+  margin: 0 auto 28px;      /* space under the header before the cards */
+  text-align: center;
+  padding: 8px 16px 0;
+}
+
+/* H1 */
+.testimonials-header h1{
+  margin: 0 0 10px;
+  font-weight: 800;
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.12;
+  letter-spacing: .01em;
+  color: #2B2B2B;           /* heading color */
+}
+
+/* Accent word “Clients” */
+.testimonials-header .accent{
+  color: #F59A23;           /* brand orange */
+}
+
+/* Subtitle under H1 */
+.testimonials-header .subtitle{
+  margin: 0 auto;
+  max-width: 900px;
+  font-size: clamp(15px, 1.4vw, 20px);
+  line-height: 1.5;
+  color: #6C6C6C;
+}
+
+/* Responsive spacing only for the header */
+@media (max-width: 768px){
+  .testimonials-header{ margin-bottom: 20px; }
+  .testimonials-header .subtitle{ max-width: 640px; }
+}
+
+.reviews{ position:relative; color:#111827; padding:60px 20px; min-height:420px; background:transparent }
+.reviews__overlay{ display:none }
+.reviews__wrap{ position:relative; max-width:1200px; margin:0 auto; z-index:1 }
+.reviews__heading{ margin:0; text-align:center; font-weight:800; font-size:34px; color:#2b2b2b }
+.reviews__heading span{ color:#F59A23 }
+.reviews__subtitle{ margin:8px auto 28px; text-align:center; max-width:820px; color:#6c6c6c }
+.reviews__grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:36px; align-items:stretch; grid-auto-rows:1fr }
+
+.review-card{ position:relative; padding:26px 28px; border-radius:16px; background: transparent; border:1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(6px) saturate(120%); -webkit-backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 14px 38px rgba(0,0,0,.35); display:grid; grid-template-rows:32px 1fr auto; height:100%
+}
+.review-card__bg{ position:absolute; inset:0; background-image:url('/src/assets/review_background.jpg'); background-size:cover; background-position:center; filter: blur(8px) saturate(115%) brightness(.9); transform:scale(1.06); z-index:0 }
+.review-card__overlay{ position:absolute; inset:0; background: radial-gradient(120% 100% at 50% 120%, rgba(0,0,0,.36) 0%, transparent 62%), linear-gradient(0deg, rgba(255,255,255,.10), transparent 80%); z-index:1 }
+.review-card::before{ content:""; position:absolute; inset:0; background-image:url('/src/assets/review_background.jpg'); background-size:cover; background-position:center;
+  filter: blur(8px) saturate(115%) brightness(.9); transform:scale(1.06); z-index:0 }
+.review-card::after{ content:""; position:absolute; inset:0; background: radial-gradient(120% 100% at 50% 120%, rgba(0,0,0,.32) 0%, transparent 60%), linear-gradient(0deg, rgba(255,255,255,.08), transparent 80%);
+  z-index:1 }
+.review-card__stars{ color:#ffbb44; font-size:16px; letter-spacing:2px; margin:0; align-self:end; z-index:2 }
+.review-card__text{ margin:6px auto 16px; max-width:520px; text-align:center; color:#f3f4f6; line-height:1.5; position:relative; z-index:2 }
+.review-card__text::before{ content:'“'; position:absolute; left:-6px; top:-18px; font-size:44px; color:rgba(255,255,255,.22) }
+.review-card__text::after{ content:'”'; position:absolute; right:-4px; bottom:-10px; font-size:44px; color:rgba(255,255,255,.22) }
+.review-card__author{ margin:0; color:#e5e7eb; align-self:end; z-index:2 }
+
+@media (max-width:1199px){ .reviews__grid{ grid-template-columns:1fr; gap:20px } }
+
+/* === Testimonials (responsive, equal height, baseline aligned) === */
+:root{
+  --t-radius:18px; --t-border:rgba(255,255,255,.18); --t-sheen:rgba(255,255,255,.08);
+  --t-vignette:rgba(0,0,0,.32); --t-text:#e9eef1; --t-muted:#c9d2d7; --t-stars:#F59A23; --t-ink:#0f1820;
+  --t-blur:12px; --t-card-bg:rgba(17,28,36,.35); --t-shadow:0 10px 28px rgba(0,0,0,.25); --t-pad:22px;
+  --t-quote-size:clamp(18px, 1.15vw + 14px, 22px);
+  --t-min-h:240px; --t-vpad:20px; --t-center-shift:8px
+}
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+.testimonials{ padding:12px; background:#ffffff }
+.t-grid{ width:100%; margin:0 auto; display:grid; gap:18px; grid-template-columns: repeat(2, minmax(0,1fr)); grid-auto-rows: 1fr; align-items: stretch }
+@media (max-width:820px){ .t-grid{ grid-template-columns:1fr } .t-card{ min-height:200px; } .t-quote{ max-width:94%; } }
+.t-card{ position:relative; overflow:hidden; border-radius:var(--t-radius); 
+  background:linear-gradient(180deg, var(--t-card-bg), rgba(10,18,26,.28)), 
+             url('/src/assets/Rectangle 80.png');
+  background-size:cover; background-position:center; background-blend-mode:overlay;
+  border:1px solid var(--t-border); box-shadow:var(--t-shadow); color:var(--t-text); 
+  padding:var(--t-vpad) 22px calc(var(--t-vpad) + 8px);
+  backdrop-filter:blur(var(--t-blur)) saturate(120%); -webkit-backdrop-filter:blur(var(--t-blur)) saturate(120%);
+  display:grid; grid-template-rows: auto 1fr auto; height:100%; min-height:var(--t-min-h)
+}
+.t-card::before{ content:""; position:absolute; inset:0; background: radial-gradient(120% 100% at 50% 120%, var(--t-vignette) 0%, transparent 60%), linear-gradient(0deg, var(--t-sheen), transparent 80%); pointer-events:none }
+.t-card::after{ content:""; display:none }
+.t-stars{ grid-row:1; justify-self:start; align-self:start; letter-spacing:2px; color:var(--t-stars); font-size:20px; font-weight:700; user-select:none }
+.t-quote{ grid-row:2; align-self:center; justify-self:center; text-align:center; max-width:90%; margin:0; font-size:var(--t-quote-size); line-height:1.55; font-weight:500; color:var(--t-text); transform:translateY(var(--t-center-shift)) }
+.t-quote::before{ content:"“"; position:absolute; left:18px; top:-6px; font-size:92px; color:rgba(255,255,255,.18); font-family: Georgia, "Times New Roman", serif; line-height:1; pointer-events:none }
+.t-quote::after{ content:"”"; position:absolute; right:28px; bottom:-6px; font-size:92px; color:rgba(255,255,255,.18); font-family: Georgia, "Times New Roman", serif; line-height:1; pointer-events:none }
+.t-author{ grid-row:3; justify-self:start; align-self:end; text-align:left; margin-top:12px; display:grid; gap:2px; max-width:60% }
+.t-grid .t-card:nth-child(3) .t-author{ transform: translateY(20px); will-change: transform }
+.t-name{ font-style:italic; font-weight:600 }
+.t-role{ color:var(--t-muted); font-weight:500 }
+
+/* Center content for the 4th card */
+.t-grid .t-card:nth-child(4) .t-author{ justify-self:start; text-align:left }
+.t-grid .t-card:nth-child(4) .t-quote{ align-self:center; justify-self:center; transform:translateY(var(--t-center-shift)) }
