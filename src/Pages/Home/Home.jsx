@@ -7,12 +7,15 @@ import Reviews from '../../Component/Reviews/Reviews.jsx'
 import CTA from '../../Component/CTA/CTA.jsx'
 import Expertise from '../../Component/Expertise/Expertise.jsx'
 
-export default function Home(){
+export default function Home({ onNavigate }){
   return (
     <>
       <Hero />
       <Benefits />
       <Services />
+      <div className="services__footer">
+        <a href="/services" className="services__all" onClick={(e)=> onNavigate && onNavigate('/services', e)}>View All Services</a>
+      </div>
       <Process />
      <Reviews/>
      <CTA/>

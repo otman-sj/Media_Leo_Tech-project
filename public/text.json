@@ -1,0 +1,162 @@
+{
+  "title": "Hero – Split Copy + Circular Visual with Floating KPI Cards",
+  "goal": "Recreate a hero section that has big headline copy on the left and a large teal circular visual on the right with a cut-out person image and three floating KPI cards. Include thin concentric rings as background accents and a small orange dot.",
+  "layout": {
+    "container": {
+      "class": "hero",
+      "maxWidth": "1200-1360px",
+      "padding": "clamp(32px,5vw,56px) 24px"
+    },
+    "grid": {
+      "class": "hero__grid",
+      "type": "2col",
+      "cols": "1fr 1.1fr",
+      "gap": "clamp(24px,4vw,48px)",
+      "align": "center"
+    }
+  },
+  "left_column": {
+    "class": "hero__copy",
+    "headline": {
+      "html": "Your <span class=\"accent\">Trusted</span> Partner In Digital Transformation",
+      "font": "800 clamp(32px,6vw,72px)/1.05, dark #0C1724",
+      "accent_color": "#F59A23"
+    },
+    "paragraph": {
+      "text": "We are your strategic partner, dedicated to blueprinting your vision into exceptional digital realities. Know more about us in this section.",
+      "font": "500 clamp(14px,1.3vw,18px)/1.6 #5B6A7A",
+      "maxWidth": "640px",
+      "spacing": "24px top margin under H1"
+    },
+    "button": {
+      "label": "FAQ’s",
+      "style": {
+        "bg": "#F59A23",
+        "text": "#fff",
+        "radius": "14px",
+        "padding": "14px 28px",
+        "shadow": "0 12px 24px rgba(245,154,35,.25)"
+      }
+    },
+    "rings_left": {
+      "type": "svg_circles",
+      "position": "behind copy, offset left",
+      "strokes": "#DDE7E9",
+      "opacities": [0.55, 0.35, 0.25, 0.18],
+      "radii_px": [260, 210, 160, 110]
+    },
+    "bullet_dot": {
+      "size": "8px",
+      "color": "#0FA4A3",
+      "position": "before headline first word"
+    }
+  },
+  "right_column": {
+    "class": "hero__visual",
+    "circle": {
+      "diameter": "min(600px, 48vw)",
+      "fill": "#095B7B",
+      "outline": "2px solid #43C4B6 (low opacity)",
+      "shape": "perfect circle with overflow hidden"
+    },
+    "person_image": {
+      "src": "/img/person.png",
+      "type": "transparent PNG cut-out",
+      "fit": "cover",
+      "place": "center bottom",
+      "height": "118% of circle"
+    },
+    "rings_right": {
+      "type": "svg_circles",
+      "position": "behind main circle, extended to page edge",
+      "strokes": "#43C4B6",
+      "opacities": [0.6, 0.45],
+      "radii_px": [420, 510]
+    },
+    "orange_dot": {
+      "size": "24px",
+      "color": "#F59A23",
+      "position": "bottom-left of main circle"
+    }
+  },
+  "kpi_cards": [
+    {
+      "id": "projects",
+      "text_top": "2K+",
+      "text_bottom": "Projects",
+      "position": "left-middle overlapping circle",
+      "style": {
+        "bg": "#fff",
+        "radius": "18px",
+        "shadow": "0 14px 30px rgba(17,24,39,.12), 0 3px 12px rgba(17,24,39,.08)",
+        "padding": "16px 20px",
+        "icon_box": { "size": "44px", "bg": "#075E86", "radius": "12px", "icon": "book/monitor" },
+        "typography": { "value": "800 22px #0C1724", "label": "600 14px #6C7A88" }
+      }
+    },
+    {
+      "id": "clients",
+      "text_top": "5K+",
+      "text_bottom": "Clients",
+      "position": "top-right of circle",
+      "style": {
+        "bg": "#fff",
+        "radius": "18px",
+        "padding": "18px 22px",
+        "progress_ring": {
+          "size": "54px",
+          "track": "#E9EEF2",
+          "value": "#F59A23",
+          "percent": 75
+        }
+      }
+    },
+    {
+      "id": "companies",
+      "text_top": "250+",
+      "text_bottom": "Companies",
+      "position": "bottom-right of circle",
+      "style": {
+        "bg": "#fff",
+        "radius": "18px",
+        "padding": "16px 20px",
+        "icon_box": { "size": "44px", "bg": "#075E86", "radius": "12px", "icon": "id-card" },
+        "typography": { "value": "800 22px #0C1724", "label": "600 14px #6C7A88" }
+      }
+    }
+  ],
+  "html_template": "<section class='hero'><div class='hero__grid'><div class='hero__copy'><h1>Your <span class='accent'>Trusted</span> Partner In Digital Transformation</h1><p>We are your strategic partner, dedicated to blueprinting your vision into exceptional digital realities. Know more about us in this section.</p><a class='btn'>FAQ’s</a><svg class='rings rings--left'><!-- circles --></svg></div><div class='hero__visual'><svg class='rings rings--right'><!-- circles --></svg><div class='circle'><img class='person' src='/img/person.png' alt='Professional with tablet'/></div><span class='dot'></span><article class='kpi kpi--left'>{...}</article><article class='kpi kpi--topright'>{...}</article><article class='kpi kpi--bottomright'>{...}</article></div></div></section>",
+  "css_rules": [
+    ".hero{background:linear-gradient(180deg,#F6FBFC 0%,#FFFFFF 60%)}",
+    ".hero__grid{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:clamp(24px,4vw,48px);max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,56px) 16px}",
+    ".hero__copy h1{font-weight:800;color:#0C1724;font-size:clamp(32px,6vw,72px);line-height:1.05;margin:0 0 18px}",
+    ".hero__copy .accent{color:#F59A23}",
+    ".hero__copy p{max-width:620px;color:#5B6A7A;font-size:clamp(14px,1.3vw,18px);line-height:1.6;margin:0 0 22px}",
+    ".btn{display:inline-block;background:#F59A23;color:#fff;padding:14px 28px;border-radius:14px;box-shadow:0 12px 24px rgba(245,154,35,.25)}",
+    ".hero__visual{position:relative;min-height:580px}",
+    ".hero__visual .circle{position:absolute;right:0;top:20px;width:min(600px,48vw);aspect-ratio:1/1;border-radius:999px;background:#095B7B;overflow:hidden;outline:2px solid rgba(67,196,182,.45);outline-offset:10px}",
+    ".hero__visual .person{position:absolute;inset:auto 0 0 50%;transform:translateX(-50%);height:118%;object-fit:cover}",
+    ".rings{position:absolute;pointer-events:none}",
+    ".rings--left{left:-120px;top:10px;width:520px;opacity:.7}",
+    ".rings--right{right:-160px;bottom:-120px;width:700px;opacity:.65}",
+    ".rings circle{fill:none;stroke:#43C4B6;stroke-width:1.6}",
+    ".hero__visual .dot{position:absolute;left:14%;bottom:12%;width:22px;height:22px;border-radius:50%;background:#F59A23;z-index:2}",
+    ".kpi{position:absolute;display:flex;align-items:center;gap:12px;background:#fff;border-radius:18px;box-shadow:0 14px 30px rgba(17,24,39,.12),0 3px 12px rgba(17,24,39,.08);padding:16px 20px;z-index:3}",
+    ".kpi--left{left:-30px;top:44%}",
+    ".kpi--topright{right:0;top:40px}",
+    ".kpi--bottomright{right:40px;bottom:24px}",
+    "@media (max-width: 992px){.hero__grid{grid-template-columns:1fr}.hero__visual{min-height:520px}.hero__visual .circle{position:relative;right:auto;margin-inline:auto;top:0;width:min(520px,76vw)}.kpi--left{left:8px;top:auto;bottom:36%}.kpi--topright{right:12px;top:8px}.kpi--bottomright{right:12px;bottom:8px}}"
+  ],
+  "assets": {
+    "person_png": "cut-out PNG of suited man (transparent background). If only rectangular image is available, pre-mask it or use CSS mask-image.",
+    "icons": "book/monitor icon, id-card icon, SVG circular progress for Clients",
+    "colors": { "teal_dark": "#095B7B", "teal_ring": "#43C4B6", "accent_orange": "#F59A23", "ink": "#0C1724" }
+  },
+  "acceptance_criteria": [
+    "Left: headline with orange accent word, body text, rounded orange CTA.",
+    "Right: teal circle with cut-out person anchored bottom, concentric rings behind.",
+    "Three KPI cards float around the circle at positions shown and cast soft shadows.",
+    "One small orange dot near bottom-left of circle.",
+    "Responsive collapse to one column with circle centered and cards repositioned, no overlaps with copy."
+  ]
+}

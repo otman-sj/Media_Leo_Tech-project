@@ -18,7 +18,21 @@
 .service__list li{ margin:4px 0 }
 .service__cta{ position:absolute; right:12px; bottom:12px; width:44px; height:44px; border-radius:50%; background:#ffffff; border:none; cursor:pointer; display:grid; place-items:center }
 .service__cta img{ width:20px; height:20px; display:block }
-.services__footer{ display:flex; justify-content:center; margin-top:24px }
+.services__footer{ display:flex; justify-content:center; margin-top:-30px }
 .services__all{ display:inline-block; padding:10px 18px; border-radius:10px; background:#f59a23; color:#fff; text-decoration:none; font-weight:700; box-shadow:0 8px 22px rgba(245,154,35,.35) }
 @media (max-width: 960px){ .services__grid{ grid-template-columns: repeat(2, minmax(260px,1fr)) } }
 @media (max-width: 640px){ .services__grid{ grid-template-columns: 1fr } }
+
+.service{ opacity:0; animation: fadeUp 620ms ease-out forwards }
+.service:nth-child(1){ animation-delay: 60ms }
+.service:nth-child(2){ animation-delay: 120ms }
+.service:nth-child(3){ animation-delay: 180ms }
+.service:nth-child(4){ animation-delay: 240ms }
+.service:nth-child(5){ animation-delay: 300ms }
+.service:nth-child(6){ animation-delay: 360ms }
+
+@keyframes fadeUp{ from{ opacity:0; transform: translateY(18px) } to{ opacity:1; transform: translateY(0) } }
+
+@media (prefers-reduced-motion: reduce){
+  .service{ animation: none }
+}

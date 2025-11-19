@@ -1,0 +1,30 @@
+.industries-testimonials{ width:100%; background:#ffffff; padding:32px 20px }
+.industries-testimonials__wrap{ max-width:1200px; margin:0 auto }
+.industries-testimonials__header{ display:grid; grid-template-columns: 1.6fr 1fr; gap:24px; align-items:end }
+.industries-testimonials__title{ margin:0; font-size:clamp(26px, 4vw, 44px); font-weight:900; color:#111827 }
+.industries-testimonials__title .accent{ color:#005A8C }
+.industries-testimonials__aside{ display:flex; flex-direction:column; gap:6px }
+.industries-testimonials__eyebrow{ margin:0; font-weight:800; color:#6b7280 }
+.industries-testimonials__desc{ margin:0; color:#6b7280; font-size:clamp(14px, 1.5vw, 16px); line-height:1.7 }
+.industries-testimonials__divider{ height:3px; background:#16A34A; margin:18px 0 24px; border-radius:999px }
+
+.industries-testimonials .t-grid{ display:grid; grid-template-columns: repeat(3, minmax(260px,1fr)); gap:28px }
+.industries-testimonials .t-card{ background:transparent; border:1px solid rgba(0,0,0,.08); border-radius:18px; box-shadow:none; overflow:hidden; display:flex; flex-direction:column }
+.industries-testimonials .t-media{ margin:0; height:clamp(160px, 22vw, 220px); overflow:hidden }
+.industries-testimonials .t-img{ width:100%; height:100%; object-fit:cover; display:block }
+.industries-testimonials .t-content{ padding:18px }
+.industries-testimonials .t-name{ margin:0 0 8px; font-weight:800; font-size:clamp(18px, 2.2vw, 22px); color:#111827 }
+.industries-testimonials .t-stars{ color:#F59A23; letter-spacing:2px; margin-bottom:8px }
+.industries-testimonials .t-quote{ margin:0 0 14px; color:#6b7280; font-size:clamp(13px, 1.5vw, 15px); line-height:1.7 }
+.industries-testimonials .t-social{ display:flex; gap:18px; color:#111827; justify-content:center; margin-top:35px }
+.industries-testimonials .t-social__link{ text-decoration:none; color:#111827; opacity:.9; display:inline-flex; align-items:center }
+.industries-testimonials .t-social__icon{ width:24px; height:24px; display:block }
+.industries-testimonials .t-card:hover{ transform: translateY(-3px); box-shadow:none }
+
+@media (max-width: 960px){
+  .industries-testimonials__header{ grid-template-columns: 1fr; gap:12px }
+  .industries-testimonials .t-grid{ grid-template-columns: repeat(2, minmax(220px,1fr)) }
+}
+@media (max-width: 640px){
+  .industries-testimonials .t-grid{ grid-template-columns: 1fr }
+}

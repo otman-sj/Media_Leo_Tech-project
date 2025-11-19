@@ -1,9 +1,15 @@
-.blog-page{ padding-top:clamp(96px, 14vw, 160px); padding-bottom:32px; background:transparent }
+.blog-page{ padding-top:0; padding-bottom:32px; background:transparent }
 .blog-search{ width:100%; background:#005A8C; padding:12px 20px; margin-top:clamp(24px, 3vw, 48px) }
 .blog-search__container{ max-width:960px; margin:0; margin-left:20px; margin-right:auto }
-.blog-search__bar{ display:flex; align-items:center; gap:8px; background:#ffffff; border-radius:12px; padding:0 10px; height:34px; width:clamp(200px, 24vw, 320px); box-shadow:0 8px 20px rgba(0,90,140,.25) }
+.blog-search__bar{ display:flex; align-items:center; gap:8px; background:#ffffff; border-radius:12px; padding:0 10px; height:34px; width:clamp(200px, 24vw, 320px); box-shadow:0 8px 20px rgba(0,90,140,.25); opacity:0; animation: fadeUp 700ms ease-out forwards 160ms }
 .blog-search__icon{ width:14px; height:14px; display:block }
 .blog-search__input{ flex:1 1 auto; border:none; outline:none; background:transparent; font-size:13px; color:#111827 }
 .blog-search__input::placeholder{ color:#6b7280 }
 .blog-search__bar:focus-within{ box-shadow:0 8px 24px rgba(0,90,140,.35) }
 .blog-search__bar:hover{ filter:brightness(1.02) }
+
+@keyframes fadeUp{ from{ opacity:0; transform: translateY(12px) } to{ opacity:1; transform: translateY(0) } }
+
+@media (prefers-reduced-motion: reduce){
+  .blog-search__bar{ animation: none }
+}

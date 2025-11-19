@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './ServiceHero.css'
 import bgImg from '../../assets/Service_Hero.png'
-import cardImg from '../../assets/media.png'
+import cardImg from '../../assets/0001.jpg'
 import globeIcon from '../../assets/icons/Ic_Globe.svg'
+import videoSrc from '../../assets/MediaLeo.mp4'
 
 export default function ServiceHero(){
+  const [playing, setPlaying] = useState(false)
+  const videoRef = useRef(null)
+  const handlePlay = () => { setPlaying(true) }
   return (
     <section className="service-hero" aria-labelledby="service-hero-title">
       <div className="service-hero__image" aria-hidden="true">
@@ -27,10 +31,16 @@ export default function ServiceHero(){
         </div>
         <aside className="service-hero__media" aria-label="Company media">
           <div className="service-hero__card">
-            <img src={cardImg} alt="" className="service-hero__card-img" />
-            <button className="service-hero__play" aria-label="Play video">
-              <span className="service-hero__play-triangle" />
-            </button>
+            {playing ? (
+              <video ref={videoRef} src={videoSrc} className="service-hero__card-video" controls autoPlay muted playsInline preload="auto" />
+            ) : (
+              <>
+                <img src={cardImg} alt="" className="service-hero__card-img" onClick={handlePlay} />
+                <button className="service-hero__play" aria-label="Play video" onClick={handlePlay}>
+                  <span className="service-hero__play-triangle" />
+                </button>
+              </>
+            )}
           </div>
         </aside>
       </div>

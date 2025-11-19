@@ -1,0 +1,5 @@
+.benefits-header{ width:100%; padding:24px 16px; background:transparent }
+.benefits-header__wrap{ max-width:1200px; margin:0 auto; text-align:center }
+.benefits__subtitle{ margin:0 0 10px; font-weight:900; font-size:clamp(24px, 3.6vw, 40px); color:#3f3f46 }
+.benefits__subtitle .accent{ color:#F59A23 }
+.benefits-header .benefits__desc{ margin:0; max-width:900px; color:#6b7280; font-size:clamp(14px, 1.6vw, 18px); line-height:1.8; text-align:center; transform: translateX(100px); width:100%; display:block }

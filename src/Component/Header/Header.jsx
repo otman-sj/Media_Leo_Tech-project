@@ -8,7 +8,6 @@ export default function Header({ route = '/', onNavigate }) {
   const [open, setOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [language, setLanguage] = useState({ label: 'Select a langauge', flag: '' })
-  const [showDefaultOption, setShowDefaultOption] = useState(true)
   return (
     <>
     <header className={`header ${['/blog','/services','/industries','/about','/contact'].includes(route) ? 'header--light' : ''}`}>
@@ -57,19 +56,14 @@ export default function Header({ route = '/', onNavigate }) {
               {language.label}
             </button>
             <ul className="lang__menu" data-open={langOpen ? 'true' : 'false'} role="menu">
-              {showDefaultOption && (
-                <li>
-                  <button role="menuitem" className="lang__item" onClick={() => { setShowDefaultOption(false); setLangOpen(false) }}>Select a langauge</button>
-                </li>
-              )}
               <li>
-                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'العربية', flag: 'fi fi-ma' }); setShowDefaultOption(false); setLangOpen(false) }}><span className="fi fi-ma flag" aria-hidden="true"></span>العربية</button>
+                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'العربية', flag: 'fi fi-ma' }); setLangOpen(false) }}><span className="fi fi-ma flag" aria-hidden="true"></span>العربية</button>
               </li>
               <li>
-                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'English', flag: 'fi fi-gb' }); setShowDefaultOption(false); setLangOpen(false) }}><span className="fi fi-gb flag" aria-hidden="true"></span>English</button>
+                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'English', flag: 'fi fi-gb' }); setLangOpen(false) }}><span className="fi fi-gb flag" aria-hidden="true"></span>English</button>
               </li>
               <li>
-                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'Français', flag: 'fi fi-fr' }); setShowDefaultOption(false); setLangOpen(false) }}><span className="fi fi-fr flag" aria-hidden="true"></span>Français</button>
+                <button role="menuitem" className="lang__item" onClick={() => { setLanguage({ label: 'Français', flag: 'fi fi-fr' }); setLangOpen(false) }}><span className="fi fi-fr flag" aria-hidden="true"></span>Français</button>
               </li>
             </ul>
           </div>

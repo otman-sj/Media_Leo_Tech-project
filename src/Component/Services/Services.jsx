@@ -100,9 +100,7 @@ export default function Services(){
             </div>
           </article>
         </div>
-        <div className="services__footer">
-          <a href="#" className="services__all">View All Services</a>
-        </div>
+        
       </div>
     </section>
   )

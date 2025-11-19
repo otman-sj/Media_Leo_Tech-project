@@ -1,0 +1,32 @@
+.about-contact{ width:100%; background:#ffffff; padding:42px 20px }
+.about-contact__wrap{ max-width:1200px; margin:0 auto }
+.about-contact__heading{ margin:0 0 18px; text-align:center; font-weight:900; font-size:clamp(22px, 3.6vw, 36px); color:#005A8C; letter-spacing:.02em; position:relative }
+.about-contact__heading::after{ content:""; display:block; width:120px; height:3px; background:#1674b4; margin:8px auto 0; border-radius:999px }
+
+.about-contact__grid{ display:grid; grid-template-columns: 1.3fr 1fr; gap:30px; align-items:start }
+.contact-left__label{ font-weight:800; color:#111827; margin-bottom:16px; text-align:left }
+.contact-form{ display:grid; gap:16px; background:transparent; border:0; border-radius:0; padding:0; width:100%; max-width:none }
+.contact-left{ display:grid; justify-items:stretch }
+.contact-label{ font-weight:700; color:#6b7280 }
+.contact-input,.contact-textarea{ width:100%; background:#ffffff; border:1px solid rgba(0,0,0,.12); border-radius:10px; padding:12px 14px; font-size:16px; color:#111827 }
+.contact-input{ height:48px }
+.contact-textarea{ min-height:160px }
+.contact-input:focus,.contact-textarea:focus{ outline:none; border-color:#1674b4; box-shadow:0 0 0 3px rgba(22,116,180,.12) }
+.contact-textarea{ resize:vertical }
+.contact-submit{ background:#F59A23; color:#ffffff; border:none; border-radius:10px; padding:16px 24px; font-size:16px; font-weight:800; width:100%; height:56px; transition: transform .2s ease, filter .2s ease }
+.contact-submit:hover{ transform: translateY(-1px); filter: brightness(1.05) }
+
+.contact-right{ display:grid; gap:16px }
+.contact-info__name{ font-weight:900; color:#111827; margin-bottom:8px }
+.contact-info__addr{ color:#6b7280 }
+.contact-info__addr{ margin-bottom:14px }
+.contact-info__link{ color:#111827; text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:8px }
+.contact-info__icon{ width:12px; height:12px; display:block }
+.contact-socials{ display:flex; gap:12px; align-items:center; margin-top:6px }
+.contact-social__icon{ width:24px; height:24px; display:block }
+
+.contact-map{ display:grid; gap:10px }
+.contact-map__link{ color:#005A8C; text-decoration:none; font-weight:700; width:max-content }
+.contact-map__frame{ width:100%; height:300px; border:1px solid rgba(0,0,0,.12); border-radius:10px }
+
+@media (max-width: 960px){ .about-contact__grid{ grid-template-columns: 1fr } }
