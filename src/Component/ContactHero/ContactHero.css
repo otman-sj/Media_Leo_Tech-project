@@ -1,0 +1,13 @@
+.contact-hero{ position:relative; width:100%; min-height:clamp(480px, 60vw, 640px); background: center/cover no-repeat; color:#ffffff; display:grid; place-items:center; padding:40px 20px 140px }
+.contact-hero__overlay{ position:absolute; inset:0; background: transparent; display:none; pointer-events:none }
+.contact-hero__wrap{ position:relative; z-index:2; max-width:1000px; margin:0 auto; text-align:center; display:grid; gap:14px }
+.contact-hero__title{ margin:0; font-weight:900; font-size:clamp(30px, 4.8vw, 52px) }
+.contact-hero__desc{ margin:0 auto; max-width:920px; color:#e5e7eb; font-size:clamp(14px, 1.6vw, 18px); line-height:1.7 }
+
+.contact-hero__pills{ position:absolute; left:50%; bottom:15%; transform: translateX(-50%); z-index:3; width:calc(100% - 40px); max-width:1120px; display:grid; grid-template-columns: repeat(4, minmax(200px,1fr)); gap:16px }
+.contact-pill{ display:flex; align-items:center; gap:10px; background:#0E3A55; color:#ffffff; border-radius:14px; padding:16px 18px; height:64px; box-shadow:0 10px 24px rgba(0,0,0,.28) }
+.contact-pill__icon{ width:22px; height:22px; display:block; filter: brightness(1.05) }
+.contact-pill__text{ font-weight:800; font-size:clamp(13px, 1.6vw, 16px); white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+
+@media (max-width:1024px){ .contact-hero__pills{ grid-template-columns: repeat(2, minmax(200px,1fr)); bottom:-28px } }
+@media (max-width:640px){ .contact-hero__pills{ grid-template-columns: 1fr; bottom:-24px } .contact-pill{ height:auto } }

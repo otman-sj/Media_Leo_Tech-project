@@ -44,7 +44,7 @@ export default function AboutBenefits(){
         <p className="about-benefits__subtitle">Install our top‑rated dropshipping app to your e‑commerce site and get access to US Suppliers, AliExpress vendors, and the best.</p>
         <div className="benefits-grid" role="list">
           {items.map((b) => (
-            <article key={b.id} className="benefit-card" role="listitem">
+            <article key={b.id} className="benefit-card reveal" data-reveal role="listitem">
               <div className="benefit-card__badge" aria-hidden="true">{b.id}</div>
               <h3 className="benefit-card__title">{b.title}</h3>
               <p className="benefit-card__text">{b.text}</p>

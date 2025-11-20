@@ -9,7 +9,7 @@ export default function AboutOverview(){
   return (
     <section className="about-overview" aria-labelledby="about-overview-title">
       <div className="about-overview__wrap">
-        <div className="about-overview__left">
+        <div className="about-overview__left reveal" data-reveal>
           <h2 className="about-overview__eyebrow">About Us</h2>
           <h3 id="about-overview-title" className="about-overview__title">We Are Media Leo Tech Your Dedicated Strategic Partner Engineering Your Growth From Concept To Conversion.</h3>
           <p className="about-overview__intro">We believe true digital success requires more than isolated services; it demands an integrated strategy where design, content, and execution work in perfect alignment.</p>
@@ -23,7 +23,7 @@ export default function AboutOverview(){
           </figure>
         </div>
 
-        <div className="about-overview__right">
+        <div className="about-overview__right reveal" data-reveal>
           <div className="about-overview__media" aria-hidden="true">
             <img src={rect13} alt="" loading="lazy" className="about-overview__img about-overview__img--top" />
             <img src={rect14} alt="" loading="lazy" className="about-overview__img about-overview__img--mid" />

@@ -12,7 +12,7 @@ export default function AboutContact(){
       <div className="about-contact__wrap">
         <h2 id="about-contact-title" className="about-contact__heading">Contact Us</h2>
         <div className="about-contact__grid">
-          <div className="contact-left" aria-label="Leave us a message">
+          <div className="contact-left reveal" data-reveal aria-label="Leave us a message">
             <div className="contact-left__label">Leave us a message</div>
             <form className="contact-form" aria-label="Contact form">
               <input type="text" className="contact-input" placeholder="First_Name Last_Name" aria-label="Name" />
@@ -21,7 +21,7 @@ export default function AboutContact(){
               <button type="button" className="contact-submit" aria-label="Send">Send</button>
             </form>
           </div>
-          <div className="contact-right">
+          <div className="contact-right reveal" data-reveal>
             <address className="contact-info">
               <div className="contact-info__name">MEDIA LEO TECH</div>
               <div className="contact-info__addr">2 Floor Hay Essalam Rue 948 , Near Bank Of Africa. Agadir: 80026 . MA</div>
